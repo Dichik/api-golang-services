@@ -22,3 +22,8 @@ func (j *JWTService) GenearateJWT(u User) (string, error) {
 func (j *JWTService) ParseJWT(jwt string) (auth.Auth, error) {
 	return auth.ParseAndValidate(jwt, j.keys.PublicKey)
 }
+
+type JWTparams struct {
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
